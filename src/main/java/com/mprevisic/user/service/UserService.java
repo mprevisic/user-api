@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.mprevisic.user.Credentials;
 import com.mprevisic.user.domain.UserEntity;
@@ -21,6 +23,7 @@ import com.mprevisic.user.util.UserBlacklistCache;
  * @created May 22, 2017
  */
 @Service
+@Transactional(propagation=Propagation.REQUIRED)
 public class UserService {
 
 	private UserRepository userRepo;
@@ -42,6 +45,7 @@ public class UserService {
 	 *            credentials of the user (e-mail and password)
 	 * @return true if authenticated, false if not
 	 */
+	@Transactional(readOnly=true)
 	public boolean authenticate(Credentials credentials) {
 		Optional<UserEntity> user = userRepo.findByEmail(credentials.getEmail());
 
@@ -59,6 +63,7 @@ public class UserService {
 	 *            e-mail address of user
 	 * @return user with given e-mail address
 	 */
+	@Transactional(readOnly=true)
 	public Optional<UserDto> findByEmail(String email) {
 		Optional<UserEntity> ue = userRepo.findByEmail(email);
 		if (ue.isPresent()) {
@@ -75,6 +80,7 @@ public class UserService {
 	 *            ID of the user
 	 * @return user with given ID
 	 */
+	@Transactional(readOnly=true)
 	public Optional<UserDto> findById(long userId) {
 		UserEntity ue = userRepo.findOne(userId);
 		if (ue != null) {

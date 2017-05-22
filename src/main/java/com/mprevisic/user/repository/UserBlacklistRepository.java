@@ -1,9 +1,10 @@
 package com.mprevisic.user.repository;
 
-import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.mprevisic.user.domain.UserBlacklistEntity;
 
@@ -14,7 +15,7 @@ import com.mprevisic.user.domain.UserBlacklistEntity;
  * @created May 22, 2017
  */
 @Repository
-@Transactional
+@Transactional(propagation=Propagation.REQUIRED)
 public interface UserBlacklistRepository extends JpaRepository<UserBlacklistEntity, Long> {
 
 	/**
