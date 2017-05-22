@@ -42,21 +42,21 @@ Following configuration parameters are available in "application.properties":
 
 The following example shows a simple configuration which uses the H2 database and runs the service on port 8081:
 
->> spring.datasource.url=jdbc:h2:mem:users;DB_CLOSE_ON_EXIT=TRUE;
->> spring.datasource.driverClassName=org.h2.Driver
->> server.port=8080
+>> spring.datasource.url=jdbc:h2:mem:users;DB_CLOSE_ON_EXIT=TRUE;</br>
+>> spring.datasource.driverClassName=org.h2.Driver</br>
+>> server.port=8080</br>
 
 The following example shows a configuration which uses the MySQL database and runs the service on port 8443 with HTTPS enabled:
 
->> spring.datasource.url=jdbc:mysql://localhost:3306/users 
->> spring.datasource.driverClassName=com.mysql.jdbc.Driver 
->> spring.datasource.name=userDS 
->> spring.datasource.username=root 
->> spring.datasource.password= 
->> server.ssl.key-store=keystore.p12 
->> server.ssl.key-store-password=abc123 
->> server.ssl.keyStoreType=PKCS12 
->> server.ssl.keyAlias=tomcat 
+>> spring.datasource.url=jdbc:mysql://localhost:3306/users</br>
+>> spring.datasource.driverClassName=com.mysql.jdbc.Driver</br> 
+>> spring.datasource.name=userDS</br>
+>> spring.datasource.username=root</br>
+>> spring.datasource.password=</br>
+>> server.ssl.key-store=keystore.p12</br> 
+>> server.ssl.key-store-password=abc123</br>
+>> server.ssl.keyStoreType=PKCS12</br>
+>> server.ssl.keyAlias=tomcat</br>
 
 An example key with the described properties (key-store = keystore.p12, password = abc123, type = PKCS12, key alias = tomcat) can be found under user-api/src/main/resources/keystore.p12
 
