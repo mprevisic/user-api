@@ -54,6 +54,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		// disable spring default CSRF protection because of 
+		// using an own custom mechanism
 		http.csrf().disable();
 
 		List<AuthenticationProvider> authManagers = new ArrayList<AuthenticationProvider>();
