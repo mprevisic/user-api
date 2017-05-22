@@ -48,15 +48,15 @@ The following example shows a simple configuration which uses the H2 database an
 
 The following example shows a configuration which uses the MySQL database and runs the service on port 8443 with HTTPS enabled:
 
->> spring.datasource.url=jdbc:mysql://localhost:3306/users
->> spring.datasource.driverClassName=com.mysql.jdbc.Driver
->> spring.datasource.name=userDS
->> spring.datasource.username=root
->> spring.datasource.password=
->> server.ssl.key-store=keystore.p12
->> server.ssl.key-store-password=abc123
->> server.ssl.keyStoreType=PKCS12
->> server.ssl.keyAlias=tomcat
+>> spring.datasource.url=jdbc:mysql://localhost:3306/users 
+>> spring.datasource.driverClassName=com.mysql.jdbc.Driver 
+>> spring.datasource.name=userDS 
+>> spring.datasource.username=root 
+>> spring.datasource.password= 
+>> server.ssl.key-store=keystore.p12 
+>> server.ssl.key-store-password=abc123 
+>> server.ssl.keyStoreType=PKCS12 
+>> server.ssl.keyAlias=tomcat 
 
 An example key with the described properties (key-store = keystore.p12, password = abc123, type = PKCS12, key alias = tomcat) can be found under user-api/src/main/resources/keystore.p12
 
