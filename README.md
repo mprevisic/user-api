@@ -9,7 +9,7 @@ Used technogies are: Java 8, Spring Boot, Spring Security, Spring-Data-JPA, MySQ
 Following prerequisites must be installed on your commputer to install and run the project:
 - Java JRE 8
 - Apache Maven (version 3.x)
-- MySQL 5.x - (this is optional, the app can also be easily configured to run with H2 in-memory database instead if no persistent storage is required)
+- MySQL 5.x - (this is optional, the app can also be easily configured to run with H2 in-memory database if no persistent storage is required)
 
 The deliverable of the application is a standalone ("fat") JAR containing an embedded Tomcat application server which is used to serve the application, so no additional application server is required to run the application.
 
@@ -30,15 +30,15 @@ Alternatively, the application.properties file can be placed anywhere if running
 
 Following configuration parameters are available in "application.properties": 
 
-"spring.datasource.url" - URL connection string for connecting to the database
-"spring.datasource.driverClassName" - class name of the JDBC driver used with the database
-"spring.datasource.username" - username of the database user
-"spring.datasource.password" - password of the database user
-"server.port" - TCP port on which the API is available (defaults to 8080 if left empty)
-"server.ssl.key-store" - path of the SSL keystore (required if using HTTPS)
-"server.ssl.key-store-password" - password for the SSL keystore (required if using HTTPS)
-"server.ssl.keyStoreType" - type of the SSL keystore (required if using HTTPS)
-"server.ssl.keyAlias" - alias of the key in the SSL keystore used as HTTPS certificate (required if using HTTPS)
+- "spring.datasource.url" - URL connection string for connecting to the database
+- "spring.datasource.driverClassName" - class name of the JDBC driver used with the database
+- "spring.datasource.username" - username of the database user
+- "spring.datasource.password" - password of the database user
+- "server.port" - TCP port on which the API is available (defaults to 8080 if left empty)
+- "server.ssl.key-store" - path of the SSL keystore (required if using HTTPS)
+- "server.ssl.key-store-password" - password for the SSL keystore (required if using HTTPS)
+- "server.ssl.keyStoreType" - type of the SSL keystore (required if using HTTPS)
+- "server.ssl.keyAlias" - alias of the key in the SSL keystore used as HTTPS certificate (required if using HTTPS)
 
 The following example shows a simple configuration which uses the H2 database and runs the service on port 8081:
 
