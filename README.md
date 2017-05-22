@@ -24,7 +24,7 @@ Before running the application, a configuration file named "application.properti
 
 Alternatively, the application.properties file can be placed anywhere if running the app as follows:
 
->> java -Dspring.config.location=/some/location -jar user-api.jar 
+>> java -Dspring.config.location=/some/location/app.properties -jar user-api.jar 
 
 When the application is started for the first time, the database schema will be created automatically by applying flyway database migrations.
 
