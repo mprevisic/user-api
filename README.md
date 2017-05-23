@@ -46,7 +46,6 @@ The following example shows a simple configuration which uses the H2 database an
 
 >> spring.datasource.url=jdbc:h2:mem:users;DB_CLOSE_ON_EXIT=TRUE;</br>
 >> spring.datasource.driverClassName=org.h2.Driver</br>
->> server.port=8080</br>
 
 The following example shows a configuration which uses the MySQL database and runs the service on port 8443 with HTTPS enabled:
 
@@ -55,6 +54,7 @@ The following example shows a configuration which uses the MySQL database and ru
 >> spring.datasource.name=userDS</br>
 >> spring.datasource.username=root</br>
 >> spring.datasource.password=</br>
+>> server.port=8080</br>
 >> server.ssl.key-store=keystore.p12</br> 
 >> server.ssl.key-store-password=abc123</br>
 >> server.ssl.keyStoreType=PKCS12</br>
