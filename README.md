@@ -54,7 +54,7 @@ The following example shows a configuration which uses the MySQL database and ru
 >> spring.datasource.name=userDS</br>
 >> spring.datasource.username=root</br>
 >> spring.datasource.password=</br>
->> server.port=8080</br>
+>> server.port=8443</br>
 >> server.ssl.key-store=keystore.p12</br> 
 >> server.ssl.key-store-password=abc123</br>
 >> server.ssl.keyStoreType=PKCS12</br>
