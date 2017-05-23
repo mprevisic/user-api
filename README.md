@@ -84,4 +84,6 @@ To execute the functional tests enter:
 
 (only "mvn integration-test" will execute both unit tests and integration tests)
 
+No database is required for running the integration tests since in the integration tests a H2 in-memory database is used instead of MySQL to make running the tests easier. While running the functional tests, the application is listening on default port 8080. This can be changed by modifying the property "server.port" in user-api/src/main/resources/application.properties.
+
 Upon executing the functional tests, a test report is generated in HTML format, which can be found at user-api/target/failsafe-reports/test-report.html.
