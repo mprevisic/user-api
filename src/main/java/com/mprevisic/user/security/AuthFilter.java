@@ -48,6 +48,12 @@ public class AuthFilter extends OncePerRequestFilter {
 		HttpServletResponse res = (HttpServletResponse) response;
 
 		try {
+			// options method doesn't require authentication
+			if ("OPTIONS".equals(req.getMethod())) {
+				chain.doFilter(request, response);
+				return;
+			}
+
 			validateCrsfToken(req);
 
 			String jwtTCookie = getJwtCookie(req);

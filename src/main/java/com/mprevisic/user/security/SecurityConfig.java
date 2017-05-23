@@ -66,7 +66,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// method
 		http.authorizeRequests().antMatchers("/api/v1/session").permitAll().and().authorizeRequests()
 				.antMatchers("/api/v1/token").permitAll().and().authorizeRequests()
-				.antMatchers(HttpMethod.POST, "/api/v1/users").permitAll();
+				.antMatchers(HttpMethod.POST, "/api/v1/users").permitAll()
+				.antMatchers(HttpMethod.OPTIONS, "/api/v1/users/?*").permitAll();;
 
 		// only authenticated users can access user management API
 		http.antMatcher("/api/v1/users/?*")

@@ -40,7 +40,13 @@ public class UserController {
 	
 	@RequestMapping(method = RequestMethod.OPTIONS)
 	public ResponseEntity<Object> getOptions(HttpServletResponse response) {
-	    response.setHeader("Allow", "OPTIONS,POST,GET,PATCH,DELETE");
+	    response.setHeader("Allow", "OPTIONS,POST");
+	    return new ResponseEntity<>(HttpStatus.OK);
+	}
+	
+	@RequestMapping(path = "/{userId}", method = RequestMethod.OPTIONS)
+	public ResponseEntity<Object> getUserOptions(HttpServletResponse response) {
+	    response.setHeader("Allow", "OPTIONS,GET,PATCH,DELETE");
 	    return new ResponseEntity<>(HttpStatus.OK);
 	}
 

@@ -76,7 +76,12 @@ public class UserApiIT {
 	 */
 	@Test
 	public void getUserOptions() {
-		when().options("/api/v1/users/").then().statusCode(200).header("Allow", "OPTIONS,POST,GET,PATCH,DELETE");
+		when().options("/api/v1/users/").then().statusCode(200).header("Allow", "OPTIONS,POST");
+	}
+	
+	@Test
+	public void getUserIdOptions() {
+		when().options("/api/v1/users/2").then().statusCode(200).header("Allow", "OPTIONS,GET,PATCH,DELETE");
 	}
 
 	/**
