@@ -119,6 +119,8 @@ public class UserApiIT {
 		given().contentType(ContentType.JSON).body(defaultUser).when().post("/api/v1/users").then().statusCode(201);
 
 		Map<String, Object> credentials = new HashMap<String, Object>();
+		credentials.put("email", "user@gmail.com");
+		credentials.put("password", "blabla123");
 
 		given().contentType(ContentType.JSON).body(credentials).when().post("/api/v1/session").then().statusCode(401);
 	}
